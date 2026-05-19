@@ -1,12 +1,215 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ARC — AI-Native Inbox Workflow',
+  description: 'An AI-native workflow system for startup operational email management.',
+}
+
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'sans-serif', padding: '2rem', textAlign: 'center' }}>
-      <h1>Team 13</h1>
-      <p><strong>AI Native Enterprise Week</strong></p>
-      <p>Building AI Native Companies in progress</p>
-      <hr />
-      <p>GitHub: ai-native-team-13</p>
-      <p>URL: team-13.apps.digitalcoa.ch</p>
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#F7F3EC',
+      color: '#2C1F14',
+      fontFamily: '"Georgia", "Times New Roman", serif',
+      lineHeight: 1.7,
+    }}>
+      <header style={{
+        padding: '3rem 2rem 2rem',
+        textAlign: 'center',
+        borderBottom: '1px solid #DDD5C8',
+      }}>
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <p style={{
+            fontSize: '0.75rem',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: '#8B7355',
+            marginBottom: '1rem',
+            fontFamily: 'sans-serif',
+          }}>Day 1 Lab Worksheet — AI Native Enterprise</p>
+          <h1 style={{
+            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
+            fontWeight: 400,
+            marginBottom: '0.5rem',
+            color: '#2C1F14',
+          }}>ARC</h1>
+          <p style={{
+            fontSize: '1.1rem',
+            color: '#6B5B4E',
+            fontStyle: 'italic',
+          }}>AI-Native Inbox Workflow</p>
+        </div>
+      </header>
+
+      <main style={{ maxWidth: 680, margin: '0 auto', padding: '3rem 2rem 4rem' }}>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>The Problem</h2>
+          <div style={cardStyle}>
+            <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
+              Startup founders receive large volumes of operational communication every day — investor emails, compliance notices, customer complaints, invoices.
+            </p>
+            <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
+              Many spend several hours daily sorting, prioritizing, and responding, leading to <strong>delayed decisions and missed opportunities</strong>.
+            </p>
+            <p style={{ fontSize: '1.05rem' }}>
+              Small startups cannot always hire operations staff, creating operational inefficiency, missed opportunities, and founder burnout.
+            </p>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>The Solution</h2>
+          <div style={cardStyle}>
+            <p style={{ fontSize: '1.05rem', marginBottom: '2rem' }}>
+              An AI-native operational email workflow that automatically classifies, prioritizes, drafts, and routes emails — keeping humans in the loop for high-stakes decisions.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+              {steps.map((step, i) => (
+                <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <span style={{
+                    backgroundColor: '#A67B5B',
+                    color: '#F7F3EC',
+                    borderRadius: '50%',
+                    width: 22,
+                    height: 22,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.7rem',
+                    flexShrink: 0,
+                    marginTop: '2px',
+                    fontFamily: 'sans-serif',
+                  }}>{i + 1}</span>
+                  <span style={{ fontSize: '0.95rem' }}>{step}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>What AI Does</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            {capabilities.map((cap) => (
+              <span key={cap} style={{
+                padding: '0.5rem 1.25rem',
+                backgroundColor: '#E8E0D4',
+                borderRadius: '2rem',
+                fontSize: '0.9rem',
+                color: '#3D2C1E',
+              }}>{cap}</span>
+            ))}
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>Human in the Loop</h2>
+          <div style={cardStyle}>
+            <p style={{ fontSize: '1.05rem', marginBottom: '1rem' }}>
+              High-risk categories require mandatory human review before any action is taken:
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+              {riskCategories.map((cat) => (
+                <span key={cat} style={{
+                  padding: '0.4rem 1rem',
+                  border: '1px solid #A67B5B',
+                  borderRadius: '2rem',
+                  fontSize: '0.85rem',
+                  color: '#A67B5B',
+                }}>{cat}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>Classification</h2>
+          <div style={cardStyle}>
+            <p style={{ fontSize: '1.05rem', marginBottom: 0 }}>
+              <em>AI-native.</em> The operational workflow itself depends on AI interpretation, routing, and prioritization logic — the system cannot operate meaningfully without AI reasoning.
+            </p>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: '3.5rem' }}>
+          <h2 style={h2Style}>Next</h2>
+          <div style={cardStyle}>
+            <p style={{ fontSize: '1.05rem' }}>
+              Building a simulated inbox prototype using sample startup emails, AI-generated classifications, and automated urgency scoring to test the response drafting workflow.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 style={h2Style}>Hidden Architecture</h2>
+          <div style={cardStyle}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {dependencies.map((dep) => (
+                <span key={dep} style={{
+                  fontSize: '0.8rem',
+                  color: '#6B5B4E',
+                  backgroundColor: '#EDE7DC',
+                  padding: '0.3rem 0.8rem',
+                  borderRadius: '4px',
+                }}>{dep}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer style={{
+        borderTop: '1px solid #DDD5C8',
+        padding: '2rem',
+        textAlign: 'center',
+        color: '#8B7355',
+        fontSize: '0.8rem',
+        fontFamily: 'sans-serif',
+      }}>
+        AI Native Enterprise Lab &mdash; Team ARC
+      </footer>
     </div>
-  );
+  )
 }
+
+const h2Style: React.CSSProperties = {
+  fontSize: '0.8rem',
+  letterSpacing: '0.15em',
+  textTransform: 'uppercase',
+  color: '#8B7355',
+  marginBottom: '1rem',
+  fontFamily: 'sans-serif',
+  fontWeight: 600,
+}
+
+const cardStyle: React.CSSProperties = {
+  backgroundColor: '#FFFFFF',
+  border: '1px solid #DDD5C8',
+  borderRadius: '8px',
+  padding: '1.75rem',
+}
+
+const steps = [
+  'Intake — email arrives',
+  'Classification — category & urgency',
+  'Prioritization — risk & impact score',
+  'Drafting — AI-generated response',
+  'HITL Review — human approves',
+  'Final Action — send, defer, or escalate',
+]
+
+const capabilities = [
+  'Classify', 'Extract', 'Route', 'Recommend', 'Generate',
+]
+
+const riskCategories = [
+  'Legal', 'Financial', 'Investor Relations',
+]
+
+const dependencies = [
+  'Gmail / Outlook API', 'OpenAI API', 'Sentiment Analysis',
+  'Calendar Integration', 'Notion / Trello / Zapier',
+]
