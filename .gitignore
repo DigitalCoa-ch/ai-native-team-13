@@ -1,4 +1,8 @@
 node_modules
 .next
-.openclaw/logs
-*.log
+out
+build
+dist
+.env
+.env.local
+.vercel
